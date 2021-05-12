@@ -1,78 +1,94 @@
-import './App.css';
 import React from 'react'
 import ButtonList from "./ButtonList"
 
 class App extends React.Component {
-  state = {
+  constructor(props) {
+  super(props)
+  this.state = {
+    result: 0,
     types: [
       {
         id: 0, 
-        type: 1
+        content: 1
       },
       {
         id: 1, 
-        type: 2
+        content: 2
       },
       {
         id: 2, 
-        type: 3
+        content: 3
       },
       {
         id: 3, 
-        type: 4
+        content: 4
       },
       {
         id: 4, 
-        type: 5
+        content: 5
       },
       {
         id: 5, 
-        type: 6
+        content: 6
       },
       {
         id: 6, 
-        type: 7
+        content: 7
       },
       {
         id: 7, 
-        type: 8
+        content: 8
       },
       {
         id: 8, 
-        type: 9
+        content: 9
       },
       {
         id: 9, 
-        type: 0
+        content: 0
       },
       {
         id: 10, 
-        type: "+"
+        content: "+"
       },
       {
         id: 11, 
-        type: "-"
+        content: "-"
       },
       {
         id: 12, 
-        type: "*"
+        content: "*"
       },
       {
         id: 13, 
-        type: "/"
+        content: "/"
       },
       {
         id: 14, 
-        type: "="
+        content: "="
       }]
 }
-  render() {
-    return (
-      <>
-        <ButtonList types={this.state.types}/>
-      </>
-    )
-  }
 }
 
+
+render() {
+    const { 
+      type, 
+      id, 
+      content,
+    } = this.state.types;
+    return (
+      <>
+        <ButtonList type={type} content={content} key={id}/>
+      </>
+    )
+}
+}
+
+
+
+
+
+
 export default App;
+
