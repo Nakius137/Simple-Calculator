@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-class Output extends React.Component {
-    // after makeing Button & Buttonlist component work, i will handle this one
+const Output = props => {
+    return <p>{props.result}</p>
 }
 export default Output;
