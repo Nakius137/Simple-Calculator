@@ -82,68 +82,58 @@ class App extends React.Component {
         id: 14, 
         content: "=",
         type: "operator"
-      }]
-      
+      }]    
 }
   }
 
-hadnlePerformance = props => {
-  switch(props.content) {
-      case 1: 
-      return console.log("1")
-      break;
-      case 2: 
-      return console.log("2")
-      break;
-      case 3: 
-      return console.log("3")
-      break;
-      case 4: 
-      return console.log("4")
-      break;
-      case 5: 
-      return console.log("5")
-      break;
-      case 6: 
-      return console.log("6")
-      break;
-      case 7: 
-      return console.log("7")
-      break;
-      case 8: 
-      return console.log("8")
-      break;
-      case 9: 
-      return console.log("9")
-      break;
-      case 0: 
-      return console.log("9")
-      break;
-      case "+": 
-      return console.log("+")
-      break;
-      case "-": 
-      return console.log("-")
-      break;
-      case "*": 
-      return console.log("*")
-      break;
-      case "/": 
-      return console.log("/")
-      break;
-      case "=": 
-      return console.log("=")
-      break;
-      default:
-          return console.log('fuck')
-  }
+hadnlePerformance = (content,result) => {
+  this.setState({
+    result: content
+  })
+  console.log(result)
+  // switch(content) {
+  //     case 1: 
+  //     return console.log("1")
+  //     case 2: 
+  //     return console.log("2")
+  //     case 3: 
+  //     return console.log("3")
+  //     case 4: 
+  //     return console.log("4")
+  //     case 5: 
+  //     return console.log("5")
+  //     case 6: 
+  //     return console.log("6")
+  //     case 7: 
+  //     return console.log("7")
+  //     case 8: 
+  //     return console.log("8")
+  //     case 9: 
+  //     return console.log("9")
+  //     case 0: 
+  //     return console.log("9")
+  //     case "+": 
+  //     return console.log("+")
+  //     case "-": 
+  //     return console.log("-")
+  //     case "*": 
+  //     return console.log("*")
+  //     case "/": 
+  //     return console.log("/")
+  //     case "=": 
+  //     return console.log("=")
+  //     default:
+  //         throw Error
+  // }
+
+ 
 }
 
 render() {
     const {result, types} = this.state
     return (
       <>
-        <Output result={result} />
+        <Output types={types} result={result} />
         <ButtonList types={types} click={this.hadnlePerformance} />
       </>
     )
