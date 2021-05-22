@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Button = props => {
-    const { content, result, click} = props
+const Button = ({ content, result, click }) => {
     return <button onClick={() => click(content,result)}>{content}</button>
 }
 export default Button;

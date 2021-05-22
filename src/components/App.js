@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
   super(props)
   this.state = {
-    result: 0,
+    result: 0, 
     types: [
       {
         id: 0, 
@@ -82,51 +82,86 @@ class App extends React.Component {
         id: 14, 
         content: "=",
         type: "operator"
-      }]    
+      },
+      {
+        id: 15, 
+        content: "Clear",
+        type: "operator"
+      },
+    ]    
 }
   }
 
-hadnlePerformance = (content,result) => {
-  this.setState({
-    result: content
-  })
-  console.log(result)
-  // switch(content) {
-  //     case 1: 
-  //     return console.log("1")
-  //     case 2: 
-  //     return console.log("2")
-  //     case 3: 
-  //     return console.log("3")
-  //     case 4: 
-  //     return console.log("4")
-  //     case 5: 
-  //     return console.log("5")
-  //     case 6: 
-  //     return console.log("6")
-  //     case 7: 
-  //     return console.log("7")
-  //     case 8: 
-  //     return console.log("8")
-  //     case 9: 
-  //     return console.log("9")
-  //     case 0: 
-  //     return console.log("9")
-  //     case "+": 
-  //     return console.log("+")
-  //     case "-": 
-  //     return console.log("-")
-  //     case "*": 
-  //     return console.log("*")
-  //     case "/": 
-  //     return console.log("/")
-  //     case "=": 
-  //     return console.log("=")
-  //     default:
-  //         throw Error
-  // }
+handlePerformance = (content,result) => {
+  switch(content) {
+      case 1: 
+      return this.setState({
+        result: result + "1"
+      })
+      case 2: 
+      return this.setState({
+        result: result + "2"
+      })
+      case 3: 
+      return this.setState({
+        result: result + "3"
+      })
+      case 4: 
+      return this.setState({
+        result: result + "4"
+      })
+      case 5: 
+      return this.setState({
+        result: result + "5"
+      })
+      case 6: 
+      return this.setState({
+        result: result + "6"
+      })
+      case 7: 
+      return this.setState({
+        result: result + "7"
+      })
+      case 8: 
+      return this.setState({
+        result: result + "8"
+      })
+      case 9: 
+      return this.setState({
+        result: result + "9"
+      })
+      case 0: 
+      return this.setState({
+        result: result + "0"
+      })
+      case "+": 
+      return this.setState({
+        result: parseInt(result) + " + "
+      })
+      case "-": 
+      return this.setState({
+        result: parseInt(result) + " - "
+      })
+      case "*": 
+      return this.setState({
+        result: parseInt(result) + " * "
+      })
+      case "/": 
+      return this.setState({
+        result: parseInt(result) + " / "
+      })
+      case "=": 
+      return this.setState({
+        result: eval(result)
+      })
+      case "Clear":
+        return this.setState({
+          result: 0
+        })
+      default:
+          throw Error
+  }
 
- 
 }
 
 render() {
@@ -134,7 +169,7 @@ render() {
     return (
       <>
         <Output types={types} result={result} />
-        <ButtonList types={types} click={this.hadnlePerformance} />
+        <ButtonList result={result} types={types} click={this.handlePerformance} />
       </>
     )
 }
