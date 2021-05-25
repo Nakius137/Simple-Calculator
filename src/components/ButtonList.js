@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button.js'
-
+import "../styles.css"
 
 const ButtonList = props => {
     const Buttons = props.types.map( button => {

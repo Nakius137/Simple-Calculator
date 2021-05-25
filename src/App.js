@@ -1,6 +1,7 @@
 import React from 'react'
-import ButtonList from "./ButtonList"
-import Output from './Output'
+import ButtonList from "./components/ButtonList"
+import Output from './components/Output'
+import "./styles.css"
 
 class App extends React.Component {
   constructor(props) {
@@ -75,7 +76,7 @@ class App extends React.Component {
       },
       {
         id: 13, 
-        content: "/",
+        content: "÷",
         type: "operator"
       },
       {
@@ -86,6 +87,11 @@ class App extends React.Component {
       {
         id: 15, 
         content: "Clear",
+        type: "operator"
+      },
+      {
+        id: 16, 
+        content: "Del last num",
         type: "operator"
       },
     ]    
@@ -136,19 +142,19 @@ handlePerformance = (content,result) => {
       })
       case "+": 
       return this.setState({
-        result: parseInt(result) + " + "
+        result: parseFloat(result) + " + "
       })
       case "-": 
       return this.setState({
-        result: parseInt(result) + " - "
+        result: parseFloat(result) + " - "
       })
       case "*": 
       return this.setState({
-        result: parseInt(result) + " * "
+        result: parseFloat(result) + " * "
       })
-      case "/": 
+      case "÷": 
       return this.setState({
-        result: parseInt(result) + " / "
+        result: parseFloat(result) + " / "
       })
       case "=": 
       return this.setState({
@@ -157,6 +163,10 @@ handlePerformance = (content,result) => {
       case "Clear":
         return this.setState({
           result: 0
+        })
+      case "Del last num":
+        return this.setState({
+          result: result.substring(0, result.length - 1)
         })
       default:
           throw Error
