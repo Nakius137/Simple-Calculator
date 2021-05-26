@@ -98,88 +98,166 @@ class App extends React.Component {
 }
   }
 
-handlePerformance = (content,result) => {
+handlePerformance = content => {
+  const { result } = this.state
+if (result === undefined) {
+  this.setState({
+    result: content
+  })
+} else {
   switch(content) {
-      case 1: 
-      return this.setState({
+      case 1:
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "1")
+        })
+      } else {
+      this.setState({
         result: result + "1"
-      })
+      })}
+      break;
       case 2: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "2")
+        })
+      } else {
+      this.setState({
         result: result + "2"
-      })
+      })}
+      break;
       case 3: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "3")
+        })
+      } else {
+      this.setState({
         result: result + "3"
-      })
+      })}
+      break;
       case 4: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "4")
+        })
+      } else {
+      this.setState({
         result: result + "4"
-      })
-      case 5: 
-      return this.setState({
-        result: result + "5"
-      })
+      })}
+      break;
+      case 5:
+        if (result === 0) {
+          this.setState({
+            result: parseFloat(result + "5")
+          })
+        } else {
+        this.setState({
+          result: result + "5"
+        })}
+      break;
       case 6: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "6")
+        })
+      } else {
+      this.setState({
         result: result + "6"
-      })
+      })}
+      break;
       case 7: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "7")
+        })
+      } else {
+      this.setState({
         result: result + "7"
-      })
+      })}
+      break;
       case 8: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "8")
+        })
+      } else {
+      this.setState({
         result: result + "8"
-      })
+      })}
+      break;
       case 9: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "9")
+        })
+      } else {
+      this.setState({
         result: result + "9"
-      })
+      })}
+      break;
       case 0: 
-      return this.setState({
+      if (result === 0) {
+        this.setState({
+          result: parseFloat(result + "0")
+        })
+      } else {
+      this.setState({
         result: result + "0"
-      })
+      })}
+      break;
       case "+": 
-      return this.setState({
-        result: parseFloat(result) + " + "
+      this.setState({
+        result: result + " + "
       })
+      break;
       case "-": 
-      return this.setState({
-        result: parseFloat(result) + " - "
+      this.setState({
+        result: result + " - "
       })
+      break;
       case "*": 
-      return this.setState({
-        result: parseFloat(result) + " * "
+      this.setState({
+        result: result + " * "
       })
+      break;
       case "÷": 
-      return this.setState({
-        result: parseFloat(result) + " / "
+      this.setState({
+        result: result + " / "
       })
+      break;
       case "=": 
-      return this.setState({
+      this.setState({
         result: eval(result)
       })
-      case "Clear":
-        return this.setState({
+      break;
+      case "Clear": 
+      this.setState({
           result: 0
         })
+      break;
       case "Del last num":
-        return this.setState({
-          result: result.substring(0, result.length - 1)
+      this.setState({
+          result: result.toString().substring(0, result.length - 1)
         })
+      break;
       default:
           throw Error
   }
-
+}
 }
 
 render() {
     const {result, types} = this.state
     return (
       <>
-        <Output types={types} result={result} />
-        <ButtonList result={result} types={types} click={this.handlePerformance} />
+        <Output 
+        types={types} 
+        result={result} />
+        <ButtonList 
+        result={result} 
+        types={types} 
+        click={this.handlePerformance} />
       </>
     )
 }
