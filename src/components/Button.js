@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles.css"
+
 const Button = ({ content, result, click }) => {
     return <button 
     onClick={() => click(content,result)} 
@@ -7,4 +8,5 @@ const Button = ({ content, result, click }) => {
     {content}
     </button>
 }
+
 export default Button;

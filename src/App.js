@@ -1,6 +1,6 @@
 import React from 'react'
-import ButtonList from "./components/ButtonList"
 import Output from './components/Output'
+import ButtonList from "./components/ButtonList"
 import "./styles.css"
 
 class App extends React.Component {
