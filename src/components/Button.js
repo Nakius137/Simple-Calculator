@@ -8,5 +8,4 @@ const Button = ({ content, result, click }) => {
     {content}
     </button>
 }
-
 export default Button;
