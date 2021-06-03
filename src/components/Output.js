@@ -7,4 +7,5 @@ const Output = props => {
     <strong>{props.result}</strong>
     </p>
 }
+
 export default Output;

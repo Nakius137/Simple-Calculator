@@ -3,7 +3,7 @@ import Output from './components/Output'
 import ButtonList from "./components/ButtonList"
 import "./styles.css"
 
-class App extends React.Component {
+class App extends React.Component { // main component 
   constructor(props) {
   super(props)
   this.state = {
@@ -98,7 +98,7 @@ class App extends React.Component {
 }
   }
 
-handlePerformance = content => {
+handlePerformance = content => { // function to make buttons do something aka adding button content to result in state
   const { result } = this.state
 if (result === undefined) {
   this.setState({
@@ -245,6 +245,7 @@ if (result === undefined) {
           throw Error
   }
 }
+
 }
 
 render() {
